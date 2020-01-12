@@ -5,9 +5,9 @@ exports.up = function(knex) {
       table.increments('id').primary();
       table.string('name');
       table.string('sex');
-      table.string('age');
-      table.string('height');
-      table.string('weight');
+      table.integer('age');
+      table.integer('height');
+      table.integer('weight');
       table.string('team');
       table.string('games');
       table.string('sport');
