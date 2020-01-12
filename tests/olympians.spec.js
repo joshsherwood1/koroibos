@@ -38,12 +38,6 @@ describe('test olympians path for get all request', () => {
       expect(response.body["olympians"][0]).toHaveProperty('age');
       expect(response.body["olympians"][0]).toHaveProperty('sport');
       expect(response.body["olympians"][0]).toHaveProperty('total_medals_won');
-
-      expect(response.body["olympians"][0].name).toBe('Benji Levi');
-      expect(response.body["olympians"][0].team).toBe('Israel');
-      expect(response.body["olympians"][0].age).toBe('24');
-      expect(response.body["olympians"][0].sport).toBe("Soccer");
-      expect(response.body["olympians"][0].total_medals_won).toBe("1");
     });
   });
 });
