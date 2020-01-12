@@ -27,23 +27,23 @@ describe('test olympians path for get all request', () => {
     it('happy path', async () => {
       const response = await request(app)
         .get("/api/v1/olympians");
-
-        console.log(response)
+        console.log(response.body)
 
       expect(response.statusCode).toBe(200);
-      expect(response.body.length).toBe(4);
 
-      expect(response.body[0]).toHaveProperty('name');
-      expect(response.body[0]).toHaveProperty('team');
-      expect(response.body[0]).toHaveProperty('age');
-      expect(response.body[0]).toHaveProperty('sport');
-      expect(response.body[0]).toHaveProperty('total_medals_won');
+      expect(response.body["olympians"].length).toBe(4);
+      expect(response.body).toHaveProperty('olympians');
+      expect(response.body["olympians"][0]).toHaveProperty('name');
+      expect(response.body["olympians"][0]).toHaveProperty('team');
+      expect(response.body["olympians"][0]).toHaveProperty('age');
+      expect(response.body["olympians"][0]).toHaveProperty('sport');
+      expect(response.body["olympians"][0]).toHaveProperty('total_medals_won');
 
-      expect(response.body[0].name).toBe('Denis Mikhaylovich Ablyazin');
-      expect(response.body[0].team).toBe('Russia');
-      expect(response.body[0].age).toBe('24');
-      expect(response.body[0].sport).toBe("Gymnastics");
-      expect(response.body[0].total_medals_won).toBe(2);
+      expect(response.body["olympians"][0].name).toBe('Benji Levi');
+      expect(response.body["olympians"][0].team).toBe('Israel');
+      expect(response.body["olympians"][0].age).toBe('24');
+      expect(response.body["olympians"][0].sport).toBe("Soccer");
+      expect(response.body["olympians"][0].total_medals_won).toBe("1");
     });
   });
 });
