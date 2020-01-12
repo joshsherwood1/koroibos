@@ -47,16 +47,18 @@ CREATE DATABASE DATABASE_NAME_dev;
 knex migrate:latest
 ```
 
-<!-- #### Importing data into database
-You will need to import resources and recovery meeting information into the database. Xlsx files with the necessary data are already provided in the repo. In order to import that data into your database, run the following commands:
+#### Importing data into database
+You will need to import the Olympians' information into the database. Run the following command in psql to do so.
 
 ```
-node import.js
-node import_recovery.js
+psql
+\c DATABASE_NAME_dev
+COPY olympians(name, sex, age, height, weight, team, games, sport, event, medal) FROM 'complete_file_path_of_csv_file' delimiter ',' csv NULL AS 'NULL';
+
 
 ```
 
-
+<!--
 #### Set up your test database
 Most of the setup is going to be same as the one you did before. You’ll notice one small difference with setting the environment flag to `test`.  
 
