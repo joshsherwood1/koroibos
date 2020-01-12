@@ -14,7 +14,7 @@ class Stats {
     formattedData["average_weight:"] = {}
     formattedData["average_weight:"]["unit"] = 'kg'
     var totalMen = 0
-    const maleOlympians = await database('olympians').where('sex', 'M').select('name', 'age', 'team', 'weight', 'height').groupBy('name', 'age', 'team', 'weight', 'height')
+    const maleOlympians = await database('olympians').where('sex', 'M').whereNotNull('weight').select('name', 'age', 'team', 'weight', 'height').groupBy('name', 'age', 'team', 'weight', 'height')
     await Promise.all(maleOlympians.map(async (olympian) => {
       const parsed = parseInt(olympian.weight)
       totalMen += parsed
@@ -25,7 +25,7 @@ class Stats {
     formattedData["average_weight:"]["male_olympians"] = averageMaleWeight
 
     var totalWomen = 0
-    const femaleOlympians = await database('olympians').where('sex', 'F').select('name', 'age', 'team', 'weight', 'height').groupBy('name', 'age', 'team', 'weight', 'height')
+    const femaleOlympians = await database('olympians').where('sex', 'F').whereNotNull('weight').select('name', 'age', 'team', 'weight', 'height').groupBy('name', 'age', 'team', 'weight', 'height')
     await Promise.all(femaleOlympians.map(async (olympian) => {
       const parsed = parseInt(olympian.weight)
       totalWomen += parsed
