@@ -58,7 +58,7 @@ COPY olympians(name, sex, age, height, weight, team, games, sport, event, medal)
 
 ```
 
-<!--
+
 #### Set up your test database
 Most of the setup is going to be same as the one you did before. You’ll notice one small difference with setting the environment flag to `test`.  
 
@@ -77,87 +77,55 @@ You will also need to update the test section of the knexfile with the test data
 
  Running tests are simple and require you to run the following command below:
 
-`npm test` -->
+`npm test`
 
-<!--
- ## Endpoint
 
- ### Root
+ ## Endpoints
 
-Production address with a single endpoint:
+Production address:
 
-``` https://stormy-depths-45174.herokuapp.com/resources```
+``` https://koroibos-olympians.herokuapp.com```
 
 To access locally:
 
 ```npm start```
 
-``` http://localhost:4000/resources ```
+``` http://localhost:3000 ```
 
-### Get All Resources
+### Get All Olympians
 Returns all resources from the database. The attributes id, name, website, street, city, state, zip code, contact, notes, category, subcategory, and favorited can also be requested for each resource.
 
 If successful, response will contain all resources in JSON format.
 
-**Sample Request Query:**
-
-```
-{
-  resources{
-    name
-    id
-    website
-    street
-    city
-    state
-    zip_code
-    contact
-    notes
-    category
-    subcategory
-    favorited
-  }
-}
-```
+```GET /api/v1/olympians```
 
 
 **Sample Successful Response:**
 
 ```
 {
-  "data": {
-    "resources": [
+  "olympians":
+    [
       {
-        "name": "Wee Cycle",
-        "id": "1",
-        "website": "http://www.weecycle.org/",
-        "street": "789 Sherman Street #250",
-        "city": "Denver",
-        "state": "CO",
-        "zip_code": "80203",
-        "contact": "720-319-7792",
-        "notes": "Provides new or gently used baby gear for low-income families with infants and toddlers.",
-        "category": "Baby Items",
-        "subcategory": "",
-        "favorited": null
+        "name": "Maha Abdalsalam",
+        "team": "Egypt",
+        "age": 18,
+        "sport": "Diving"
+        "total_medals_won": 0
       },
       {
-        "name": "Clayton Family Futures",
-        "id": "2",
-        "website": "http://www.claytonearlylearning.org/",
-        "street": "3801 Martin Luther King Blvd.",
-        "city": "Denver",
-        "state": "CO",
-        "zip_code": "80205",
-        "contact": "(303) 355-4411",
-        "notes": "Prenatal intervention & child development services",
-        "category": "Child Care",
-        "subcategory": "Preschools",
-        "favorited": null
-      }
-     ]
-    }
-   }
+        "name": "Ahmad Abughaush",
+        "team": "Jordan",
+        "age": 20,
+        "sport": "Taekwondo"
+        "total_medals_won": 1
+      },
+      {...}
+    ]
+}
+
+    <!--
+
 ```
 
 ### Get All Resources By Category
