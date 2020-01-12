@@ -19,14 +19,4 @@ router.get('/', async function (request, response) {
    });
 });
 
-// router.get('/', async function (request, response) => {
-//   try {
-//     let data = await olympians.getAllOlympians()
-//     return response.status(200).json(data);
-//   }
-//   catch(error) {
-//     return response.status(500).json({"error": "Request could not be handled"});
-//   }
-// });
-
 module.exports = router;
