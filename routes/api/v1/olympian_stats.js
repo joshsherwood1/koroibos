@@ -5,12 +5,12 @@ const environment = process.env.NODE_ENV || 'development';
 const configuration = require('../../../knexfile')[environment];
 const database = require('knex')(configuration);
 
-const OlympiansPresenter = require('../../../presenters/olympians_presenter.js');
-const olympiansPresenter = new OlympiansPresenter();
+const StatsPresenter = require('../../../presenters/stats_presenter.js');
+const statsPresenter = new StatsPresenter();
 
 
 router.get('/', async function (request, response) {
- await olympiansPresenter.createOlympiansResponse()
+ await statsPresenter.createStatsResponse()
   .then((data) => {
      response.status(200).json(data);
    })
