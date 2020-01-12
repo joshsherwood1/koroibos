@@ -93,7 +93,7 @@ To access locally:
 ``` http://localhost:3000 ```
 
 ### Get All Olympians
-Returns all resources from the database. The attributes id, name, website, street, city, state, zip code, contact, notes, category, subcategory, and favorited can also be requested for each resource.
+Returns all olympians from the database. The attributes name, age, team, sport, and total_medals_won are included for each olympian.
 
 If successful, response will contain all resources in JSON format.
 
@@ -124,46 +124,31 @@ If successful, response will contain all resources in JSON format.
     ]
 }
 
-    <!--
+
 
 ```
 
-### Get All Resources By Category
-Returns all resources from the database that have a specified category. The attributes id, name, website, street, city, state, zip code, contact, notes, category, subcategory, and favorited can also be requested for each resource.
+### Get Olympian Stats
+Returns all olympian stats from the database.
 
 If successful, response will contain all relevant resources in JSON format.
-
-**Sample Request Query:**
-
-```
-    {
-      resources_by_category(category: "Baby Items") {
-        name
-        website
-        street
-        city
-        state
-      }
-    }
-```
 
 
 **Sample Successful Response:**
 
 ```
 {
-  "data": {
-    "resources_by_category": [
-      {
-        "name": "Wee Cycle",
-        "website": "http://www.weecycle.org/",
-        "street": "789 Sherman Street #250",
-        "city": "Denver",
-        "state": "CO"
-      }
-    ]
+  "olympian_stats": {
+    "total_competing_olympians": 2856,
+    "average_weight:": {
+      "unit": "kg",
+      "male_olympians": 79.396379525593,
+      "female_olympians": 62.69198664440734
+    },
+    "average_age:": 26.37464985994398
   }
 }
+    <!--
 ```
 
 ### Get All Resources By ID
