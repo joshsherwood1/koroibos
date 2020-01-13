@@ -133,6 +133,8 @@ Returns all olympian stats from the database.
 
 If successful, response will contain all relevant resources in JSON format.
 
+```GET /api/v1/olympian_stats```
+
 
 **Sample Successful Response:**
 
@@ -148,7 +150,31 @@ If successful, response will contain all relevant resources in JSON format.
     "average_age:": 26.37464985994398
   }
 }
-    <!--
+
+### Get YoungestOlympian
+
+Returns youngest olympian information. The attributes name, age, team, sport, and total_medals_won are included for the olympian.
+
+If successful, response will contain all relevant resources in JSON format.
+
+```GET /api/v1/olympians?age=youngest```
+
+
+**Sample Successful Response:**
+
+```
+{
+  "youngestOlympian": [
+    {
+      "name": "Ana Iulia Dascl",
+      "age": 13,
+      "team": "Romania",
+      "sport": "Swimming",
+      "total_medals_won": "0"
+    }
+  ]
+}
+<!--
 ```
 
 ### Get All Resources By ID
