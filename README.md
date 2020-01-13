@@ -17,9 +17,9 @@
 
 Koroibos is an API that hosts information regarding Olympians from the 2016 Summer Olympics in Rio de Janeiro, Brazil. Information regarding individual Olympian information, team/country information, sport/event information, and average Olympian statistics are available to access by making API requests.
 
-* [Project Requirements](https://backend.turing.io/module4/projects/cross_pollination/cross_pollination_spec)
+* [Project Requirements](https://backend.turing.io/module4/projects/take_home_challenge/take_home_challenge_rubric)
 
-* [GitHub Project Board](https://github.com/orgs/Turing-MOD4-Cross-Pollination/projects/1)
+* [GitHub Project Board](https://github.com/joshsherwood1/koroibos/projects/1)
 
 
  ## Intial Setup
@@ -102,7 +102,7 @@ Endpoint:
 
 ```GET /api/v1/olympians```
 
-(Click here)[https://koroibos-olympians.herokuapp.com/api/v1/olympians] to visit the production endpoint.
+[Click here](https://koroibos-olympians.herokuapp.com/api/v1/olympians) to visit the production endpoint.
 
 
 **Sample Successful Response:**
@@ -140,7 +140,7 @@ Endpoint:
 
 ```GET /api/v1/olympian_stats```
 
-(Click here)[https://koroibos-olympians.herokuapp.com/api/v1/olympian_stats] to visit the production endpoint.
+[Click here](https://koroibos-olympians.herokuapp.com/api/v1/olympian_stats) to visit the production endpoint.
 
 
 **Sample Successful Response:**
@@ -170,7 +170,7 @@ Endpoint:
 
 ```GET /api/v1/olympians?age=youngest```
 
-(Click here)[https://koroibos-olympians.herokuapp.com/api/v1/olympians?age=youngest] to visit the production endpoint.
+[Click here](https://koroibos-olympians.herokuapp.com/api/v1/olympians?age=youngest) to visit the production endpoint.
 
 
 **Sample Successful Response:**
@@ -200,7 +200,7 @@ Endpoint:
 
 ```GET /api/v1/olympians?age=oldest```
 
-(Click here)[https://koroibos-olympians.herokuapp.com/api/v1/olympians?age=oldest] to visit the production endpoint.
+[Click here](https://koroibos-olympians.herokuapp.com/api/v1/olympians?age=oldest) to visit the production endpoint.
 
 
 **Sample Successful Response:**
@@ -230,7 +230,7 @@ Endpoint:
 
 ```GET /api/v1/events```
 
-(Click here)[https://koroibos-olympians.herokuapp.com/api/v1/events] to visit the production endpoint.
+[Click here](https://koroibos-olympians.herokuapp.com/api/v1/events) to visit the production endpoint.
 
 
 **Sample Successful Response:**
@@ -274,7 +274,7 @@ Endpoint:
 
 ```GET /api/v1/events/:id/medalists```
 
-(Click here)[https://koroibos-olympians.herokuapp.com/api/v1/events/10/medalists] to visit the production endpoint.
+[Click here](https://koroibos-olympians.herokuapp.com/api/v1/events/10/medalists) to visit the production endpoint.
 
 
 **Sample Successful Response:**
@@ -310,7 +310,7 @@ Endpoint:
 
 ```GET /api/v1/teams```
 
-(Click here)[https://koroibos-olympians.herokuapp.com/api/v1/teams] to visit the production endpoint.
+[Click here](https://koroibos-olympians.herokuapp.com/api/v1/teams) to visit the production endpoint.
 
 
 **Sample Successful Response:**
