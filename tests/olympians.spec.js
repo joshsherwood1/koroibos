@@ -66,12 +66,17 @@ describe('test olympians path for get all request', () => {
 
       expect(response.statusCode).toBe(200);
 
-      expect(response.body[0].length).toBe(1);
-      expect(response.body[0]).toHaveProperty('name');
-      expect(response.body[0]).toHaveProperty('team');
-      expect(response.body[0]).toHaveProperty('age');
-      expect(response.body[0]).toHaveProperty('sport');
-      expect(response.body[0]).toHaveProperty('total_medals_won');
+      expect(response.body["youngestOlympian"].length).toBe(1);
+      expect(response.body["youngestOlympian"][0]).toHaveProperty('name');
+      expect(response.body["youngestOlympian"][0]).toHaveProperty('team');
+      expect(response.body["youngestOlympian"][0]).toHaveProperty('age');
+      expect(response.body["youngestOlympian"][0]).toHaveProperty('sport');
+      expect(response.body["youngestOlympian"][0]).toHaveProperty('total_medals_won');
+      expect(response.body["youngestOlympian"][0]['name']).toBe("Elena Maria");
+      expect(response.body["youngestOlympian"][0]['team']).toBe('Brazil');
+      expect(response.body["youngestOlympian"][0]['age']).toBe("10");
+      expect(response.body["youngestOlympian"][0]['sport']).toBe('Running');
+      expect(response.body["youngestOlympian"][0]['total_medals_won']).toBe("0");
     });
   });
 });
