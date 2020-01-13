@@ -3,7 +3,7 @@ const events = new Events();
 
 class EventsPresenter {
 
-  async createStatsResponse() {
+  async createEventsResponse() {
     const data = await events.getEvents()
     // const formattedData = {}
     // formattedData["olympian_stats"] = data
