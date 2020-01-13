@@ -19,4 +19,20 @@ router.get('/', async function (request, response) {
     });
 });
 
+router.get('/:id/medalists', async function (request, response) {
+  try {
+    await database('events').where('id', request.params.id).select('name')
+  }
+catch(error) {
+  return response.status(404).json({"error": "Record not found"});
+}
+   await eventsPresenter.createMedalistsResponse(request.params.id)
+    .then((data) => {
+       response.status(200).json(data);
+     })
+     .catch((error) => {
+       return response.status(500).json({ error });
+    });
+});
+
 module.exports = router;
