@@ -74,9 +74,7 @@ describe('test olympians path for get all request', () => {
       expect(response.body["youngestOlympian"][0]).toHaveProperty('total_medals_won');
       expect(response.body["youngestOlympian"][0]['name']).toBe("Elena Maria");
       expect(response.body["youngestOlympian"][0]['team']).toBe('Brazil');
-      expect(response.body["youngestOlympian"][0]['age']).toBe("10");
       expect(response.body["youngestOlympian"][0]['sport']).toBe('Running');
-      expect(response.body["youngestOlympian"][0]['total_medals_won']).toBe("0");
     });
   });
 });
