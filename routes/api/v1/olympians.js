@@ -19,6 +19,16 @@ router.get('/', async function (request, response) {
        return response.status(500).json({ error });
      });
   }
+
+  if (request.query.age === 'oldest') {
+    await olympiansPresenter.createOldestResponse()
+    .then((oldestOlympian) => {
+       response.status(200).json({oldestOlympian});
+     })
+     .catch((error) => {
+       return response.status(500).json({ error });
+     });
+  }
  await olympiansPresenter.createOlympiansResponse()
   .then((data) => {
      response.status(200).json(data);
