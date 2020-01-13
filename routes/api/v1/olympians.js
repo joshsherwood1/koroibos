@@ -10,6 +10,9 @@ const olympiansPresenter = new OlympiansPresenter();
 
 
 router.get('/', async function (request, response) {
+  if (request.query.age === 'youngest') {
+    await olympiansPresenter.createYoungestResponse()
+  }
  await olympiansPresenter.createOlympiansResponse()
   .then((data) => {
      response.status(200).json(data);
