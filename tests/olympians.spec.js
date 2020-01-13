@@ -44,7 +44,6 @@ describe('test olympians path for get all request', () => {
     it('happy path', async () => {
       const response = await request(app)
         .get("/api/v1/olympian_stats");
-        console.log(response.body)
 
       expect(response.statusCode).toBe(200);
 
@@ -57,6 +56,25 @@ describe('test olympians path for get all request', () => {
       expect(response.body["olympian_stats"]["average_weight:"]["female_olympians"]).toBe(45);
       expect(response.body["olympian_stats"]).toHaveProperty("average_weight:");
       expect(response.body["olympian_stats"]).toHaveProperty("average_age:");
+    });
+  });
+
+  describe('test GET youngest olympian', () => {
+    it('happy path', async () => {
+      const response = await request(app)
+        .get("/api/v1/olympians?age=youngest");
+
+      expect(response.statusCode).toBe(200);
+
+      expect(response.body["youngestOlympian"].length).toBe(1);
+      expect(response.body["youngestOlympian"][0]).toHaveProperty('name');
+      expect(response.body["youngestOlympian"][0]).toHaveProperty('team');
+      expect(response.body["youngestOlympian"][0]).toHaveProperty('age');
+      expect(response.body["youngestOlympian"][0]).toHaveProperty('sport');
+      expect(response.body["youngestOlympian"][0]).toHaveProperty('total_medals_won');
+      expect(response.body["youngestOlympian"][0]['name']).toBe("Elena Maria");
+      expect(response.body["youngestOlympian"][0]['team']).toBe('Brazil');
+      expect(response.body["youngestOlympian"][0]['sport']).toBe('Running');
     });
   });
 });
