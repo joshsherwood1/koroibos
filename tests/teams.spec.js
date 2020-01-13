@@ -28,10 +28,12 @@ describe('test olympians path for get all request', () => {
       const response = await request(app)
         .get("/api/v1/teams");
 
+        console.log(response.body)
+
       expect(response.statusCode).toBe(200);
 
       expect(response.body).toHaveProperty('teams');
-      expect(response.body["teams"][0]).toHaveProperty('country');
+      expect(response.body["teams"][0]).toHaveProperty('team');
       expect(response.body["teams"][0]).toHaveProperty('olympians');
     });
   });
