@@ -12,7 +12,7 @@ class OlympiansPresenter {
 
   async createYoungestResponse() {
     const data = await olympians.getYoungestOlympian()
-    const formattedData = {data}
+    const formattedData = [ data ]
     return formattedData
   }
 }
