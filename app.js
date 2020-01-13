@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var olympiansRouter = require('./routes/api/v1/olympians');
 var olympiansStatsRouter = require('./routes/api/v1/olympian_stats');
 var eventsRouter = require('./routes/api/v1/events');
+var teamsRouter = require('./routes/api/v1/teams');
 
 var app = express();
 
@@ -24,5 +25,6 @@ app.use('/', indexRouter);
 app.use('/api/v1/olympians', olympiansRouter);
 app.use('/api/v1/olympian_stats', olympiansStatsRouter);
 app.use('/api/v1/events', eventsRouter);
+app.use('/api/v1/teams', teamsRouter);
 
 module.exports = app;
