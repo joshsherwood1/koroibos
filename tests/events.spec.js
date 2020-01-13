@@ -37,4 +37,18 @@ describe('test olympians path for get all request', () => {
       expect(response.body["events"][0]["events"][0]).toBe("Men's Little Wave");
     });
   });
+
+  describe('test olympians GET', () => {
+    it('happy path', async () => {
+      const response = await request(app)
+        .get("/api/v1/events/:id/medalists");
+
+        console.log(response.body)
+
+      expect(response.statusCode).toBe(200);
+
+      expect(response.body).toHaveProperty('event');
+      expect(response.body).toHaveProperty('medalists');
+    });
+  });
 });
