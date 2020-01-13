@@ -77,4 +77,23 @@ describe('test olympians path for get all request', () => {
       expect(response.body["youngestOlympian"][0]['sport']).toBe('Running');
     });
   });
+
+  describe('test GET oldest olympian', () => {
+    it('happy path', async () => {
+      const response = await request(app)
+        .get("/api/v1/olympians?age=oldest");
+
+      expect(response.statusCode).toBe(200);
+
+      expect(response.body["oldestOlympian"].length).toBe(1);
+      expect(response.body["oldestOlympian"][0]).toHaveProperty('name');
+      expect(response.body["oldestOlympian"][0]).toHaveProperty('team');
+      expect(response.body["oldestOlympian"][0]).toHaveProperty('age');
+      expect(response.body["oldestOlympian"][0]).toHaveProperty('sport');
+      expect(response.body["oldestOlympian"][0]).toHaveProperty('total_medals_won');
+      expect(response.body["oldestOlympian"][0]['name']).toBe("Benji Levi");
+      expect(response.body["oldestOlympian"][0]['team']).toBe('Israel');
+      expect(response.body["oldestOlympian"][0]['sport']).toBe('Soccer');
+    });
+  });
 });
