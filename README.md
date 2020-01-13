@@ -355,6 +355,23 @@ Endpoint:
 
 Sometimes the data does not come back from the database right away when making an API request to the production endpoint. Simply wait a few seconds and refresh the page, and the endpoint will be working.
 
+The error will look something like this:
+
+```
+{
+  "error": {
+    "name": "error",
+    "length": 116,
+    "severity": "FATAL",
+    "code": "53300",
+    "file": "miscinit.c",
+    "line": "664",
+    "routine": "InitializeSessionUserId"
+  }
+}
+
+```
+
 
  ## Tech Stack List
    *  [Node.js](https://nodejs.org/en/)
