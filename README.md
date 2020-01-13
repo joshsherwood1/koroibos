@@ -203,6 +203,46 @@ If successful, response will contain all relevant resources in JSON format.
 
 ```
 
+### Get All Events
+
+Returns sport names with all related event names for each sport.
+
+If successful, response will contain all relevant resources in JSON format.
+
+```GET /api/v1/events```
+
+
+**Sample Successful Response:**
+
+```
+{
+  "events":
+    [
+      {
+        "sport": "Archery",
+        "events": [
+          "Archery Men's Individual",
+          "Archery Men's Team",
+          "Archery Women's Individual",
+          "Archery Women's Team"
+        ]
+      },
+      {
+        "sport": "Badminton",
+        "events": [
+          "Badminton Men's Doubles",
+          "Badminton Men's Singles",
+          "Badminton Women's Doubles",
+          "Badminton Women's Singles",
+          "Badminton Mixed Doubles"
+        ]
+      },
+      {...}
+    ]
+}
+
+```
+
 ```
 <!--
 ### Get All Resources By ID
