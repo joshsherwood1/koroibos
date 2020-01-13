@@ -33,18 +33,18 @@ describe('test olympians path for get all request', () => {
     database.raw('truncate table events cascade');
   });
 
-  // describe('test events GET', () => {
-  //   it('happy path', async () => {
-  //     const response = await request(app)
-  //       .get("/api/v1/events");
-  //
-  //     expect(response.statusCode).toBe(200);
-  //
-  //     expect(response.body["events"].length).toBe(2);
-  //     expect(response.body["events"][0]["sport"]).toBe("Surfing");
-  //     expect(response.body["events"][0]["events"][0]).toBe("Men's Little Wave");
-  //   });
-  // });
+  describe('test events GET', () => {
+    it('happy path', async () => {
+      const response = await request(app)
+        .get("/api/v1/events");
+
+      expect(response.statusCode).toBe(200);
+
+      expect(response.body["events"].length).toBe(2);
+      expect(response.body["events"][0]["sport"]).toBe("Surfing");
+      expect(response.body["events"][0]["events"][0]).toBe("Men's Little Wave");
+    });
+  });
 
   describe('test medalists GET', () => {
     it('happy path', async () => {
@@ -60,6 +60,14 @@ describe('test olympians path for get all request', () => {
       expect(response.body["medalists"][0]["name"]).toBe('Denis Mikhaylovich Ablyazin');
       expect(response.body["medalists"][0]["team"]).toBe('Russia');
       expect(response.body["medalists"][0]["medal"]).toBe('Silver');
+    });
+
+    it('sad path', async () => {
+      const response = await request(app)
+        .get("/api/v1/events/kjashdfaksjhf/medalists");
+
+      expect(response.statusCode).toBe(404);
+      expect(response.body.error).toBe('Record not found');
     });
   });
 });
