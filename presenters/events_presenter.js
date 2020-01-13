@@ -5,9 +5,9 @@ class EventsPresenter {
 
   async createEventsResponse() {
     const data = await events.getEvents()
-    // const formattedData = {}
-    // formattedData["olympian_stats"] = data
-    return data
+    const formattedData = {}
+    formattedData["events"] = data
+    return formattedData
   }
 }
 
