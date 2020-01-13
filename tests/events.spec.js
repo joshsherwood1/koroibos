@@ -28,12 +28,13 @@ describe('test olympians path for get all request', () => {
       const response = await request(app)
         .get("/api/v1/events");
 
+        console.log(response.body)
+
       expect(response.statusCode).toBe(200);
 
-      expect(response.body["events"].length).toBe(4);
-      expect(response.body).toHaveProperty('events');
-      expect(response.body["events"][0]).toHaveProperty('sports');
-      expect(response.body["events"][0]["events"]).tobe(['events']);
+      expect(response.body["events"].length).toBe(2);
+      expect(response.body["events"][0]["sport"]).toBe("Surfing");
+      expect(response.body["events"][0]["events"][0]).toBe("Men's Little Wave");
     });
   });
 });
