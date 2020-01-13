@@ -166,7 +166,7 @@ Returns youngest olympian information. The attributes name, age, team, sport, an
 
 If successful, response will contain all relevant resources in JSON format.
 
-Endpoint: 
+Endpoint:
 
 ```GET /api/v1/olympians?age=youngest```
 
@@ -302,7 +302,7 @@ Endpoint:
 
 ### Get All Teams
 
-Returns each team name along with the Olympians who belong to that team. Olympian information will include the attributes name, age, sport, and total medals won.
+Returns each team name along with the Olympians who belong to that team. Olympian information will include the name attribute.
 
 If successful, response will contain all relevant resources in JSON format.
 
@@ -317,27 +317,24 @@ Endpoint:
 
 ```
 {
-  "teams":
-    [
-      {
-        "country": "Algeria",
-        "olympians": [
-             {
-        "name": "Maha Abdalsalam",
-        "team": "Algeria",
-        "age": 18,
-        "sport": "Diving"
-        "total_medals_won": 0
-      },
-      {
-        "name": "Ahmad Abughaush",
-        "team": "Algeria",
-        "age": 20,
-        "sport": "Taekwondo"
-        "total_medals_won": 1
-      },
-        ]
-      },
+  "teams": [
+    {
+      "team": "Bangladesh",
+      "olympians": [
+        {
+          "name": "Abdullah Hel Baki"
+        },
+        {
+          "name": "Masbah Ahmmed"
+        },
+        {
+          "name": "Shirin Akter"
+        },
+        {
+          "name": "Sonia Aktar"
+        }
+      ]
+    },
       {...}
     ]
 }
