@@ -11,7 +11,7 @@
  *  [Schema Design](https://github.com/joshsherwood1/koroibos#schema-design)
  *  [Known Issues](https://github.com/joshsherwood1/koroibos#known-issues)
  *  [Tech Stack List](https://github.com/joshsherwood1/koroibos#tech-stack-list)
- *  [Core Contributor](https://github.com/joshsherwood1/koroibos#core-contributor)
+ *  [Contributor Information](https://github.com/joshsherwood1/koroibos#contributor-information)
 
 ## Introduction
 
