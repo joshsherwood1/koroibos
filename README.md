@@ -151,7 +151,7 @@ If successful, response will contain all relevant resources in JSON format.
   }
 }
 
-### Get YoungestOlympian
+### Get Youngest Olympian
 
 Returns youngest olympian information. The attributes name, age, team, sport, and total_medals_won are included for the olympian.
 
@@ -174,9 +174,37 @@ If successful, response will contain all relevant resources in JSON format.
     }
   ]
 }
-<!--
+
 ```
 
+### Get Oldest Olympian
+
+Returns oldest olympian information. The attributes name, age, team, sport, and total_medals_won are included for the olympian.
+
+If successful, response will contain all relevant resources in JSON format.
+
+```GET /api/v1/olympians?age=oldest```
+
+
+**Sample Successful Response:**
+
+```
+{
+  "oldestOlympian": [
+    {
+      "name": "Julie Brougham",
+      "age": 62,
+      "team": "New Zealand",
+      "sport": "Equestrianism",
+      "total_medals_won": "0"
+    }
+  ]
+}
+
+```
+
+```
+<!--
 ### Get All Resources By ID
 Returns the resource from the database that have a specified id. The attributes id, name, website, street, city, state, zip code, contact, notes, category, subcategory, and favorited can also be requested for the resource.
 
